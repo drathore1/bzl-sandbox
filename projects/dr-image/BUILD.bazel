@@ -1,6 +1,15 @@
-load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_push")
 
 container_image(
     name = "image",
     base = "@ubuntu-lunar//image"
+)
+
+container_push(
+    name = "push",
+    format = "Docker",
+    image = ":image",
+    registry = "index.docker.io",
+    repository = "drathore123/dr-sandbox",
+    tag = "0.0.1",
 )
