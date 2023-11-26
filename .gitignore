@@ -1,0 +1,9 @@
+/bazel-*
+# Ignore backup files.
+*~
+# Ignore Vim swap files.
+.*.swp
+# macOS-specific excludes
+.DS_Store
+# Ignore outputs generated during Bazel bootstrapping.
+/output/
